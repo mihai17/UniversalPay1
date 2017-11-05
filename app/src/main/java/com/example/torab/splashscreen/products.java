@@ -42,6 +42,7 @@ public class products  extends AppCompatActivity  {
         findViewById (R.id.button6).setOnClickListener (buttonClickListener);
         findViewById (R.id.button11).setOnClickListener (buttonClickListener);
         findViewById (R.id.button10).setOnClickListener (buttonClickListener);
+        findViewById (R.id.button9).setOnClickListener (buttonClickListener);
     }
     private View.OnClickListener buttonClickListener = new View.OnClickListener (){
         @Override
@@ -101,6 +102,23 @@ public class products  extends AppCompatActivity  {
                         UDP6();
                     } catch (IOException e) {
                         e.printStackTrace ( );
+                    }
+                    break;
+
+                case R.id.button9:
+                     {
+                        AlertDialog alertDialog;
+                        alertDialog = new AlertDialog.Builder(products.this).create();
+                        alertDialog.setTitle("Uh-Oh!");
+                        alertDialog.setMessage("Sorry!No products were found in this category!");
+                        alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "Ok :(",
+                                new OnClickListener() {
+                                    public void onClick(DialogInterface dialog, int which) {
+                                        dialog.dismiss();
+                                    }
+                                });
+                        alertDialog.show();
+
                     }
                     break;
 
