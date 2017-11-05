@@ -28,69 +28,151 @@ import static android.content.DialogInterface.*;
  * Created by petre on 11/4/2017.
  */
 
-public class products  extends AppCompatActivity {
+public class products  extends AppCompatActivity  {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
 
 
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.products);
+        super.onCreate (savedInstanceState);
+        setContentView (R.layout.products);
+        defineButtons ( );
+    }
+
+    private void defineButtons() {
+        findViewById (R.id.button6).setOnClickListener (buttonClickListener);
+        findViewById (R.id.button11).setOnClickListener (buttonClickListener);
+        findViewById (R.id.button10).setOnClickListener (buttonClickListener);
+    }
+    private View.OnClickListener buttonClickListener = new View.OnClickListener (){
+        @Override
+        public void onClick (View view){
+            switch (view.getId()){
+                case R.id.button6:
+                    try {
+                        AlertDialog alertDialog;
+                        alertDialog = new AlertDialog.Builder(products.this).create();
+                        alertDialog.setTitle("Congratulations!");
+                        alertDialog.setMessage("Transaction Successful");
+                        alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK",
+                                new OnClickListener() {
+                                    public void onClick(DialogInterface dialog, int which) {
+                                        dialog.dismiss();
+                                    }
+                                });
+                        alertDialog.show();
+                        UDP1 ();
+                        UDP2 ();
+                    } catch (IOException e) {
+                        e.printStackTrace ( );
+                    }
+                    break;
+                case R.id.button11:
+                    try {AlertDialog alertDialog;
+                        alertDialog = new AlertDialog.Builder(products.this).create();
+                        alertDialog.setTitle("Congratulations!");
+                        alertDialog.setMessage("Transaction Successful");
+                        alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK",
+                                new OnClickListener() {
+                                    public void onClick(DialogInterface dialog, int which) {
+                                        dialog.dismiss();
+                                    }
+                                });
+                        alertDialog.show();
+                        UDP3 ();
+                        UDP4 ();
+                    } catch (IOException e) {
+                        e.printStackTrace ( );
+                    }
+                    break;
+                case R.id.button10:
+                    try {
+                        AlertDialog alertDialog;
+                        alertDialog = new AlertDialog.Builder(products.this).create();
+                        alertDialog.setTitle("Congratulations!");
+                        alertDialog.setMessage("Transaction Successful");
+                        alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK",
+                                new OnClickListener() {
+                                    public void onClick(DialogInterface dialog, int which) {
+                                        dialog.dismiss();
+                                    }
+                                });
+                        alertDialog.show();
+                        UDP5 ();
+                        UDP6();
+                    } catch (IOException e) {
+                        e.printStackTrace ( );
+                    }
+                    break;
 
 
-
-        Button button6 = (Button) findViewById(R.id.button6);
-
-        button6.setOnClickListener(new View.OnClickListener() {
-
-
-
-            public void onClick(View v) {
-
-
-                AlertDialog alertDialog;
-                alertDialog = new AlertDialog.Builder(products.this).create();
-                alertDialog.setTitle("Alert");
-                alertDialog.setMessage("Alert message to be shown");
-                alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK",
-                        new OnClickListener() {
-                            public void onClick(DialogInterface dialog, int which) {
-                                dialog.dismiss();
-                            }
-                        });
-                alertDialog.show();
-                try {
-                    UDP1 ();
-                    UDP2 ();
-                } catch (IOException e) {
-                    e.printStackTrace ( );
-                }
-
-            }
-            public void UDP1() throws IOException {
-                String messageStr="cola";
-                int server_port = 9998;
-                DatagramSocket s = new DatagramSocket();
-                InetAddress local = InetAddress.getByName("192.168.43.16");
-                int msg_length=messageStr.length();
-                byte[] message = messageStr.getBytes();
-                DatagramPacket p = new DatagramPacket(message, msg_length,local,server_port);
-                s.send(p);
-            }
-            public void UDP2() throws IOException {
-                String messageStr="cola";
-                int server_port = 9997;
-                DatagramSocket s = new DatagramSocket();
-                InetAddress local = InetAddress.getByName("192.168.43.16");
-                int msg_length=messageStr.length();
-                byte[] message = messageStr.getBytes();
-                DatagramPacket p = new DatagramPacket(message, msg_length,local,server_port);
-                s.send(p);
-            }
-
-
-            });
+            }}
+        public void UDP1() throws IOException {
+            String messageStr="cola";
+            int server_port = 9998;
+            DatagramSocket s = new DatagramSocket();
+            InetAddress local = InetAddress.getByName("192.168.43.16");
+            int msg_length=messageStr.length();
+            byte[] message = messageStr.getBytes();
+            DatagramPacket p = new DatagramPacket(message, msg_length,local,server_port);
+            s.send(p);
+        }
+        public void UDP2() throws IOException {
+            String messageStr="cola";
+            int server_port = 9997;
+            DatagramSocket s = new DatagramSocket();
+            InetAddress local = InetAddress.getByName("192.168.43.16");
+            int msg_length=messageStr.length();
+            byte[] message = messageStr.getBytes();
+            DatagramPacket p = new DatagramPacket(message, msg_length,local,server_port);
+            s.send(p);
         }
 
-    }
+        public void UDP3() throws IOException {
+            String messageStr="pepsi";
+            int server_port = 9998;
+            DatagramSocket s = new DatagramSocket();
+            InetAddress local = InetAddress.getByName("192.168.43.16");
+            int msg_length=messageStr.length();
+            byte[] message = messageStr.getBytes();
+            DatagramPacket p = new DatagramPacket(message, msg_length,local,server_port);
+            s.send(p);
+        }
+        public void UDP4() throws IOException {
+            String messageStr="pepsi";
+            int server_port = 9997;
+            DatagramSocket s = new DatagramSocket();
+            InetAddress local = InetAddress.getByName("192.168.43.16");
+            int msg_length=messageStr.length();
+            byte[] message = messageStr.getBytes();
+            DatagramPacket p = new DatagramPacket(message, msg_length,local,server_port);
+            s.send(p);
+        }
+        public void UDP5() throws IOException {
+            String messageStr="redbull";
+            int server_port = 9998;
+            DatagramSocket s = new DatagramSocket();
+            InetAddress local = InetAddress.getByName("192.168.43.16");
+            int msg_length=messageStr.length();
+            byte[] message = messageStr.getBytes();
+            DatagramPacket p = new DatagramPacket(message, msg_length,local,server_port);
+            s.send(p);
+        }
+        public void UDP6() throws IOException {
+            String messageStr="redbull";
+            int server_port = 9997;
+            DatagramSocket s = new DatagramSocket();
+            InetAddress local = InetAddress.getByName("192.168.43.16");
+            int msg_length=messageStr.length();
+            byte[] message = messageStr.getBytes();
+            DatagramPacket p = new DatagramPacket(message, msg_length,local,server_port);
+            s.send(p);
+        }
+
+
+
+    };}
+
+
+
 
 
