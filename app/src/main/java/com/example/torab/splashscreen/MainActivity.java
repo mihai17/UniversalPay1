@@ -7,9 +7,18 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
+import java.io.IOException;
+import java.net.DatagramPacket;
+import java.net.DatagramSocket;
+import java.net.InetAddress;
+import java.net.SocketException;
+import java.net.UnknownHostException;
+
 public class MainActivity extends AppCompatActivity {
 
     private static final String TAG = "MainActivity";
+
+
 
 
     @Override
@@ -20,7 +29,9 @@ public class MainActivity extends AppCompatActivity {
 
         Button button2 = (Button) findViewById(R.id.button2);
         button2.setOnClickListener(new View.OnClickListener() {
+
             @Override
+
             public void onClick(View view) {
                 Log.d(TAG, "onClick: Clicked button2");
                 Intent intent = new Intent(MainActivity.this,vending_machines.class);
@@ -28,4 +39,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+
+
 }
