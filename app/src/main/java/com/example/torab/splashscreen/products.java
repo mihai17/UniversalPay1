@@ -128,7 +128,7 @@ public class products  extends AppCompatActivity  {
             String messageStr="cola";
             int server_port = 9998;
             DatagramSocket s = new DatagramSocket();
-            InetAddress local = InetAddress.getByName("192.168.43.16");
+            InetAddress local = InetAddress.getByName("192.168.1.230");
             int msg_length=messageStr.length();
             byte[] message = messageStr.getBytes();
             DatagramPacket p = new DatagramPacket(message, msg_length,local,server_port);
@@ -138,7 +138,7 @@ public class products  extends AppCompatActivity  {
             String messageStr="cola";
             int server_port = 9997;
             DatagramSocket s = new DatagramSocket();
-            InetAddress local = InetAddress.getByName("192.168.43.16");
+            InetAddress local = InetAddress.getByName("192.168.1.230");
             int msg_length=messageStr.length();
             byte[] message = messageStr.getBytes();
             DatagramPacket p = new DatagramPacket(message, msg_length,local,server_port);
@@ -149,7 +149,7 @@ public class products  extends AppCompatActivity  {
             String messageStr="pepsi";
             int server_port = 9998;
             DatagramSocket s = new DatagramSocket();
-            InetAddress local = InetAddress.getByName("192.168.43.16");
+            InetAddress local = InetAddress.getByName("192.168.1.230");
             int msg_length=messageStr.length();
             byte[] message = messageStr.getBytes();
             DatagramPacket p = new DatagramPacket(message, msg_length,local,server_port);
@@ -159,7 +159,7 @@ public class products  extends AppCompatActivity  {
             String messageStr="pepsi";
             int server_port = 9997;
             DatagramSocket s = new DatagramSocket();
-            InetAddress local = InetAddress.getByName("192.168.43.16");
+            InetAddress local = InetAddress.getByName("192.168.1.230");
             int msg_length=messageStr.length();
             byte[] message = messageStr.getBytes();
             DatagramPacket p = new DatagramPacket(message, msg_length,local,server_port);
@@ -169,7 +169,7 @@ public class products  extends AppCompatActivity  {
             String messageStr="redbull";
             int server_port = 9998;
             DatagramSocket s = new DatagramSocket();
-            InetAddress local = InetAddress.getByName("192.168.43.16");
+            InetAddress local = InetAddress.getByName("192.168.1.230");
             int msg_length=messageStr.length();
             byte[] message = messageStr.getBytes();
             DatagramPacket p = new DatagramPacket(message, msg_length,local,server_port);
@@ -179,7 +179,7 @@ public class products  extends AppCompatActivity  {
             String messageStr="redbull";
             int server_port = 9997;
             DatagramSocket s = new DatagramSocket();
-            InetAddress local = InetAddress.getByName("192.168.43.16");
+            InetAddress local = InetAddress.getByName("192.168.1.230");
             int msg_length=messageStr.length();
             byte[] message = messageStr.getBytes();
             DatagramPacket p = new DatagramPacket(message, msg_length,local,server_port);
